@@ -13,4 +13,5 @@ $ docker-compose up -d
 ```
 $ python container_exec.py
 ```
-により、Yolov5_StrongSORT_OSNetがcontainer内で実行されます。container内のデータはローカルフォルダと同期しています。
+により、Yolov5_StrongSORT_OSNetがcontainer内で実行されます。<br>
+container内のデータはローカルフォルダと同期しています。
