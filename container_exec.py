@@ -10,25 +10,7 @@ FILE = "xroad2.mp4"
 source = os.path.join(INPUT, FILE)
 workdir = os.path.join("/usr", "src", "app")
 sort_weight = "osnet_x1_0_msmt17.pt"
-DURATION = 60  # 60 秒ごとに分割する
 
-
-def split_movie():
-    cli = docker.DockerClient(base_url="unix://var/run/docker.sock")
-    file_name = os.path.splitext(FILE)[0]
-    container_name = f"traffic_object_tracer"
-    split_container = cli.containers.get(container_name)
-
-    os.makedirs("yolo_strong_sort/splited", exist_ok=True)
-
-    print(f"container id   :{split_container.id}")
-    print(f"container name :{split_container.name}")
-
-    command = f"python split.py {source} {DURATION}"
-    
-    # cont_work_dir = os.path.join("/usr", "src", "app", "python-src", "Yolov5_StrongSORT_OSNet")
-    res = split_container.exec_run(cmd=command, detach=False, tty=True)
-    print(res.output.decode("utf-8"))
 
 
 def run_track():
@@ -62,9 +44,6 @@ def count_object():
 
 if __name__ == "__main__":
 
-    split_movie()    # split movie
-
     run_track()    # detect traffic tracking
-    
     count_object()    # count traffic object number
 
