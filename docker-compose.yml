@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  traffic:
+    container_name: traffic_object_tracer
+    build:
+      context: .
+      dockerfile: Dockerfile
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./python_src:/usr/src/app/
+    command: /bin/bash
+      
