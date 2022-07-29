@@ -16,4 +16,4 @@ $ python container_exec.py
 により、Yolov5_StrongSORT_OSNetがcontainer内で実行されます。<br>
 container内のデータはローカルフォルダと同期しています。
 
-about count, data
+`python_src/input`以下に置いた動画に対し、物体追跡アルゴリズムを実行し、その結果作成されるファイルに基づいて、何台の車両が動画中映り込んだかをカウントします。
