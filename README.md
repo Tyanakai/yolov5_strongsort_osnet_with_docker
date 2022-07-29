@@ -4,7 +4,7 @@
 ## 環境構築
 Dockerがインストールされている環境で、以下のコマンドを実行してください。
 ```
-$ git clone https://github.com/Tyanakai/yolov5_strongsort_osnet.git
+$ git clone https://github.com/Tyanakai/yolov5_strongsort_osnet_with_docker.git
 $ cd yolov5_strongsort_osnet
 $ docker-compose up -d
 ```
